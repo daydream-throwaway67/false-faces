@@ -1,0 +1,43 @@
+[gd_scene load_steps=4 format=4 uid="uid://dasp1l4euh17q"]
+
+[ext_resource type="Script" uid="uid://bmrp2aodcfhhh" path="res://jatekos.gd" id="1_n2dh7"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_186t8"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACgAAAAUklGRpgAAABXRUJQVlA4TIwAAAAvP8APEC9AmG3U5/xVD+A0FKRtwJT6l7xDkG1Tqxle+wKCIv9HCwD/By2dC4zaSHI0lwAshUawUlNYAMefzuYcXhH9Z+S2bSSq68zc5hcSSsPrkVCdUQpQKl+7j38YJ3zJjNeXv7R/afa/kwRIWskP3ad10AmgUwpEqoM+nlmk5X1HSUoDeJzvRM4RAQ==")
+size_override = Vector2(64, 64)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_186t8"]
+radius = 12.0
+
+[node name="jatekos" type="CharacterBody2D"]
+script = ExtResource("1_n2dh7")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = SubResource("PortableCompressedTexture2D_186t8")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "G:/GVB/dolgok/ember.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "49d46290d494c783d22b9a929cd7cd61"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 20)
+shape = SubResource("CircleShape2D_186t8")

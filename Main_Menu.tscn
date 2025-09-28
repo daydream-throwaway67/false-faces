@@ -1,0 +1,107 @@
+[gd_scene load_steps=10 format=3 uid="uid://d2egcwer75j0"]
+
+[ext_resource type="Texture2D" uid="uid://dytdv1u4of6bm" path="res://menuKep.png" id="1_m625n"]
+[ext_resource type="Script" uid="uid://coo0ip1nikoik" path="res://main_menu.gd" id="1_wugcc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wugcc"]
+texture = ExtResource("1_m625n")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_m625n"]
+bg_color = Color(0.560955, 0.560955, 0.560955, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_wugcc"]
+bg_color = Color(0.381703, 0.381703, 0.381703, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_gtid3"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_257up"]
+bg_color = Color(0.560784, 0.560784, 0.560784, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_3mro0"]
+bg_color = Color(0.380392, 0.380392, 0.380392, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_dnfjo"]
+bg_color = Color(1, 1, 1, 1)
+corner_radius_top_left = 30
+corner_radius_top_right = 30
+corner_radius_bottom_right = 30
+corner_radius_bottom_left = 30
+
+[node name="Main_Menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_wugcc")
+
+[node name="Panel" type="Panel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_styles/panel = SubResource("StyleBoxTexture_wugcc")
+
+[node name="Név" type="Label" parent="."]
+layout_mode = 0
+offset_left = 537.0
+offset_top = 72.0
+offset_right = 1109.0
+offset_bottom = 166.0
+theme_override_font_sizes/font_size = 60
+text = "White Guy and Dog"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 655.0
+offset_top = 256.0
+offset_right = 990.0
+offset_bottom = 510.0
+theme_override_constants/separation = 60
+
+[node name="Start_Gomb" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0117647, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_m625n")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_wugcc")
+theme_override_styles/normal = SubResource("StyleBoxFlat_gtid3")
+text = "Start Game
+"
+
+[node name="Exit_Gomb" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.0117647, 0, 0, 1)
+theme_override_font_sizes/font_size = 32
+theme_override_styles/hover = SubResource("StyleBoxFlat_257up")
+theme_override_styles/pressed = SubResource("StyleBoxFlat_3mro0")
+theme_override_styles/normal = SubResource("StyleBoxFlat_dnfjo")
+text = "Exit
+"
+
+[connection signal="pressed" from="VBoxContainer/Start_Gomb" to="." method="_on_start_gomb_pressed"]
+[connection signal="pressed" from="VBoxContainer/Exit_Gomb" to="." method="_on_exit_gomb_pressed"]

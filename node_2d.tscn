@@ -1,0 +1,139 @@
+[gd_scene load_steps=12 format=4 uid="uid://c517cy5547juc"]
+
+[ext_resource type="Texture2D" uid="uid://balda1frfmqs3" path="res://hatter.png" id="1_0e48y"]
+[ext_resource type="PackedScene" uid="uid://dasp1l4euh17q" path="res://jatekos.tscn" id="1_wtcfe"]
+[ext_resource type="Script" uid="uid://cwn1kstg7u2aq" path="res://tom.gd" id="2_epypp"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_epypp"]
+texture = ExtResource("1_0e48y")
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_0e48y"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACgAAAAUklGRpgAAABXRUJQVlA4TIsAAAAvP8APEC9AkG1Tf79JXOIaBNk29XeY0pVOkG1T6skd7gKCIv9HC8D/oW2qwaiNJEdzgcBQaAQrNYEjsfzB5BzuFdF/Rm7bRqK6zsxtfiGxDIIeiTUYVUC1XL+PP1gvvNls0Fu+9H/p9r+TBEg62Q/9p23QC6BXDiRqgyH+s0gn+I6SlQHweN+J/EcEAA==")
+size_override = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_epypp"]
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_epypp"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAAC8AAAAUklGRrQAAABXRUJQVlA4TKgAAAAvH8AHED9AJmAxObx+CfRPow9ZgMk49nYnkL9ODmQBJgPZHUAK+aPkICAo8n+0AP5vG6AkC7LeFhw3kuQ2Q0kJKAXaCPiXWVwAZAZu+Pf5Q4s56CKI6P8E9HlkW12Ur25dtLNZSRPJZmBQJtYDTWY9BLMH3JfZ5D3dpDIA0Mz/A4CX9JtWBiDC/IQA4KW4KcH1aDLrgUGZWK+kQjbrQvlsqku7uj6PbAE=")
+size_override = Vector2(32, 32)
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_wtcfe"]
+a = Vector2(222, 0)
+b = Vector2(-646, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0hol4"]
+size = Vector2(16, 215)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_q6r6c"]
+size = Vector2(13, 222)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0e48y"]
+size = Vector2(55, 67)
+
+[node name="Jatek" type="Node2D"]
+
+[node name="Háttér" type="Panel" parent="."]
+offset_left = -596.0
+offset_top = -61.0
+offset_right = 856.0
+offset_bottom = 193.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_epypp")
+
+[node name="Tom" type="CharacterBody2D" parent="."]
+script = ExtResource("2_epypp")
+
+[node name="Sprite2D" type="Sprite2D" parent="Tom"]
+texture_filter = 1
+position = Vector2(260, 115)
+texture = SubResource("PortableCompressedTexture2D_0e48y")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "res://zold.aseprite",
+"source_uid": 5138105775199503321
+}
+metadata/_aseprite_wizard_source_file_hash_ = "9004169cd3685efef734ed7588040097"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Tom"]
+shape = SubResource("RectangleShape2D_epypp")
+disabled = true
+
+[node name="jatekos" parent="." instance=ExtResource("1_wtcfe")]
+position = Vector2(113, 113)
+
+[node name="Camera2D" type="Camera2D" parent="jatekos"]
+position = Vector2(2, -29)
+zoom = Vector2(3, 3)
+limit_top = -32
+limit_bottom = -10000000
+position_smoothing_speed = 25.0
+
+[node name="E" type="Sprite2D" parent="jatekos"]
+visible = false
+texture_filter = 1
+position = Vector2(147, -58)
+texture = SubResource("PortableCompressedTexture2D_epypp")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "G:/GVB/dolgok/button_e.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "6c69d431e588d8caa9867a1db731259b"
+
+[node name="Föld" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Föld"]
+position = Vector2(258, 147)
+shape = SubResource("SegmentShape2D_wtcfe")
+
+[node name="Fal" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="Fal"]
+position = Vector2(-390, 43.5)
+shape = SubResource("RectangleShape2D_0hol4")
+
+[node name="Fal2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape3" type="CollisionShape2D" parent="Fal2"]
+position = Vector2(484.5, 44)
+shape = SubResource("RectangleShape2D_q6r6c")
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(221, 119)
+
+[node name="Action" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(38.5, -6)
+shape = SubResource("RectangleShape2D_0e48y")
+
+[connection signal="body_entered" from="Area2D" to="jatekos" method="_on_area_2d_body_entered"]
