@@ -1,0 +1,55 @@
+[gd_scene load_steps=4 format=3 uid="uid://deq5otb8go2w5"]
+
+[ext_resource type="Texture2D" uid="uid://ddy4hpk1cgnyf" path="res://hatter3.png" id="1_nxogm"]
+[ext_resource type="Script" uid="uid://dlbqjtqguwqar" path="res://choice_prompt.gd" id="1_ulcgi"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_drvgu"]
+font_size = 10
+
+[node name="ChoiceScene" type="Node2D"]
+position = Vector2(562, 260)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
+self_modulate = Color(1, 1, 1, 0.262745)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("1_nxogm")
+
+[node name="ChoicePrompt" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_ulcgi")
+metadata/_edit_use_anchors_ = true
+
+[node name="Question" type="Label" parent="ChoicePrompt"]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = -1.8
+anchor_top = -0.9
+anchor_right = 1.825
+anchor_bottom = -0.3
+offset_bottom = 1.52588e-05
+text = "I wish I was a millionaire!"
+label_settings = SubResource("LabelSettings_drvgu")
+horizontal_alignment = 1
+vertical_alignment = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="BoxContainer" type="BoxContainer" parent="ChoicePrompt"]
+visible = false
+layout_mode = 0
+offset_left = -62.0
+offset_top = -10.0
+offset_right = 68.0
+offset_bottom = 26.0
+
+[node name="Accept" type="Button" parent="ChoicePrompt/BoxContainer"]
+layout_mode = 2
+text = "Accept"
+
+[node name="Decline" type="Button" parent="ChoicePrompt/BoxContainer"]
+layout_mode = 2
+text = "Decline"

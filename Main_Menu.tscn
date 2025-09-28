@@ -68,12 +68,12 @@ theme_override_styles/panel = SubResource("StyleBoxTexture_wugcc")
 
 [node name="Név" type="Label" parent="."]
 layout_mode = 0
-offset_left = 537.0
-offset_top = 72.0
-offset_right = 1109.0
-offset_bottom = 166.0
+offset_left = 575.0
+offset_top = 91.0
+offset_right = 1094.0
+offset_bottom = 185.0
 theme_override_font_sizes/font_size = 60
-text = "White Guy and Dog"
+text = "Destiny's Choices"
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0

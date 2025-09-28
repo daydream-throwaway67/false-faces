@@ -1,0 +1,201 @@
+[gd_scene load_steps=13 format=4 uid="uid://bbqpk48pwbcug"]
+
+[ext_resource type="Texture2D" uid="uid://balda1frfmqs3" path="res://hatter.png" id="1_3n8p1"]
+[ext_resource type="PackedScene" uid="uid://dasp1l4euh17q" path="res://jatekos.tscn" id="2_rb2qb"]
+[ext_resource type="PackedScene" uid="uid://deq5otb8go2w5" path="res://scene.tscn" id="3_rb2qb"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_81rhu"]
+texture = ExtResource("1_3n8p1")
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_bl0c4"]
+a = Vector2(492, 148)
+b = Vector2(-50, 148)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3n8p1"]
+size = Vector2(17, 120)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_rb2qb"]
+size = Vector2(7, 159)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_3n8p1"]
+_data = PackedByteArray("AAADAAUAAAABAAAAQAAAAEAAAACeAAAAUklGRpYAAABXRUJQVlA4TIoAAAAvP8APEC9AkG1T7Lkd7hoE2Tb1N5vHPU6QbVPsuR3uAoIi/0cLwP+hbarBqI0kR3OBwFBoBCs1gSOx/MHkHO4V0X9GbttGorrOzG1+IbEMgh6JNRhVQLVcv48/WC+82WzQW770f+n2v5MESDrZD/2nbdALoFcOJGqDIf6zSCf4jpKVAfB434n8RwQ=")
+size_override = Vector2(64, 64)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_81rhu"]
+size = Vector2(54, 76)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_rb2qb"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAAC8AAAAUklGRrQAAABXRUJQVlA4TKgAAAAvH8AHED9AJmAxObx+CfRPow9ZgMk49nYnkL9ODmQBJgPZHUAK+aPkICAo8n+0AP5vG6AkC7LeFhw3kuQ2Q0kJKAXaCPiXWVwAZAZu+Pf5Q4s56CKI6P8E9HlkW12Ur25dtLNZSRPJZmBQJtYDTWY9BLMH3JfZ5D3dpDIA0Mz/A4CX9JtWBiDC/IQA4KW4KcH1aDLrgUGZWK+kQjbrQvlsqku7uj6PbAE=")
+size_override = Vector2(32, 32)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_81rhu"]
+_data = PackedByteArray("AAADAAUAAAABAAAAIAAAACAAAAA8AAAAUklGRjQAAABXRUJQVlA4TCgAAAAvH8AHEBcQ8z8Y8x8YoTiSpORciI4QL1ucd0T/JwBmVvutriPVVg0C")
+size_override = Vector2(32, 32)
+
+[sub_resource type="PortableCompressedTexture2D" id="PortableCompressedTexture2D_bl0c4"]
+_data = PackedByteArray("AAADAAUAAAABAAAAgAAAAIAAAADCAAAAUklGRroAAABXRUJQVlA4TK4AAAAvf8AfEF9AkG1TpZvcH2I8Ctq2YcIfYouhBHYJBCHikq3+CgiK/B8tAOyBnnkGTilHLnh1cBPbttVggZruHANn5kjAACqoIyESoiNd6vjjt8uEmYj+T8BwzVjHX6SCxbQKFtMqWEyrYDGtgsW0ChbTKlhMq2AxrYLFtAoW0ypYTKtgMa2CxbQKFtMqmnHCGTevlz1s+S0ZtyM+363TX7ZxO+Lc25oH7vm+7GGv+ww=")
+size_override = Vector2(128, 128)
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Háttér" type="Panel" parent="."]
+offset_left = -32.0
+offset_top = -60.0
+offset_right = 424.0
+offset_bottom = 194.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_81rhu")
+
+[node name="convo_camera" type="Camera2D" parent="."]
+visible = false
+enabled = false
+position_smoothing_enabled = true
+
+[node name="jatekos" parent="." instance=ExtResource("2_rb2qb")]
+position = Vector2(18, 113)
+
+[node name="Camera2D" type="Camera2D" parent="jatekos"]
+position = Vector2(2, -29)
+zoom = Vector2(3, 3)
+limit_left = -11
+limit_top = -32
+limit_right = 400
+limit_bottom = -10000000
+position_smoothing_speed = 25.0
+
+[node name="Föld" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Föld"]
+shape = SubResource("SegmentShape2D_bl0c4")
+
+[node name="Fal" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2" type="CollisionShape2D" parent="Fal"]
+position = Vector2(346, 91)
+shape = SubResource("RectangleShape2D_3n8p1")
+
+[node name="Fal2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Fal2"]
+position = Vector2(-14.5, 69.5)
+shape = SubResource("RectangleShape2D_rb2qb")
+
+[node name="Tom" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(190, 114)
+texture = SubResource("PortableCompressedTexture2D_3n8p1")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "G:/GVB/dolgok/piros_ember.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "2a65fcec73fb8be0236b60fa9fc73869"
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="Action3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(189, 110)
+shape = SubResource("RectangleShape2D_81rhu")
+
+[node name="E" type="Sprite2D" parent="."]
+visible = false
+texture_filter = 1
+position = Vector2(191, 62)
+texture = SubResource("PortableCompressedTexture2D_rb2qb")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "G:/GVB/dolgok/button_e.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "6c69d431e588d8caa9867a1db731259b"
+
+[node name="Jel" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(190, 61)
+texture = SubResource("PortableCompressedTexture2D_81rhu")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "G:/GVB/dolgok/jel.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "63aa74ab35ce3f39422733bdfb1ab57f"
+
+[node name="Haz" type="Sprite2D" parent="."]
+texture_filter = 1
+position = Vector2(355, 84)
+texture = SubResource("PortableCompressedTexture2D_bl0c4")
+metadata/_aseprite_wizard_interface_config_ = {
+"pending_changes": {}
+}
+metadata/_aseprite_wizard_config_ = {
+"convert_fps_field": 60.0,
+"convert_ms_field": 16.0,
+"convert_to_fps": false,
+"embed_tex": true,
+"i_mode": 1,
+"keep_anim_length": false,
+"layers": [],
+"o_ex_p": "",
+"o_folder": "",
+"o_name": "",
+"only_visible": false,
+"player": "",
+"scale": "1.0",
+"slice": "",
+"source": "G:/GVB/dolgok/haz.aseprite",
+"source_uid": -1
+}
+metadata/_aseprite_wizard_source_file_hash_ = "3e50dcc24c07610d9b1733e7764490c2"
+
+[node name="ChoiceScene" parent="." instance=ExtResource("3_rb2qb")]
+position = Vector2(293, 99)
+
+[connection signal="body_entered" from="Area2D" to="jatekos" method="_on_area_2d_body_enteredAC3"]
+[connection signal="body_exited" from="Area2D" to="jatekos" method="_on_area_2d_body_exitedAC3"]
