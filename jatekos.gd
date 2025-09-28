@@ -25,4 +25,7 @@ func _physics_process(delta: float) -> void:
 	move_and_slide()
 	
 func _on_area_2d_body_entered(body: Node2D) -> void:
-	$E.visible = true
+	$"../E".visible = true
+	
+func _on_area_2d_body_exited(body: Node2D) -> void:
+	$"../E".visible = false
